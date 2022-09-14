@@ -29,9 +29,9 @@
 }
 .goods__arrow_prev {
     left: -5px;
+    transform: rotate(180deg);
 
 }
 .goods__arrow_next {
     right: -5px;
-    transform: rotate(180deg);
 }
