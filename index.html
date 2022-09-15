@@ -8,6 +8,9 @@
     <title>ProApple - товары Apple</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml"> 
     <link rel="apple-touch-icon" href="img/faviconApple.png" type="image/png">
+    <link rel="stylesheet" href="lib/swiper-bundle.min.css"/>
+
+    <script src="scripts/index.js" type="module"></script>
 </head>
 <body>
     <header class="header">
@@ -78,9 +81,9 @@
                 <h2 class="goods__title">Все продукты новой линейки</h2>
 
                 <div class="goods__helper">
-                    <div class="goods__block">
-                        <ul class="goods__list">
-                            <li class="goods__item">
+                    <div class="goods__block swiper">
+                        <ul class="goods__list swiper-wrapper">
+                            <li class="goods__item swiper-slide">
                                 <article class="goods__product product">
                                     <div class="product__image-wrapper">
                                         <img src="img/iPhone14-pro.png" alt="" class="product__image" width="200" heigth="200">
@@ -92,7 +95,7 @@
                                     <button class="product__more">Узнать больше</button>
                                 </article>
                             </li>
-                            <li class="goods__item">
+                            <li class="goods__item swiper-slide">
                                 <article class="goods__product product">
                                     <div class="product__image-wrapper">
                                         <img src="img/iPhone14.png" alt="Iphone 14" class="product__image" width="200" heigth="200">
@@ -104,7 +107,7 @@
                                     <button class="product__more">Узнать больше</button>
                                 </article>
                             </li>
-                            <li class="goods__item">
+                            <li class="goods__item swiper-slide">
                                 <article class="goods__product product">
                                     <div class="product__image-wrapper">
                                         <img src="img/AirPodsPro.png" alt="AirPods Pro" class="product__image" width="200" heigth="200">
@@ -116,7 +119,7 @@
                                     <button class="product__more">Узнать больше</button>
                                 </article>
                             </li>
-                            <li class="goods__item">
+                            <li class="goods__item swiper-slide">
                                 <article class="goods__product product">
                                     <div class="product__image-wrapper">
                                         <img src="img/apple_watch_ultra.png" alt="Apple Watch Ultra" class="product__image" width="200" heigth="200">
@@ -128,7 +131,7 @@
                                     <button class="product__more">Узнать больше</button>
                                 </article>
                             </li>
-                            <li class="goods__item">
+                            <li class="goods__item swiper-slide">
                                 <article class="goods__product product">
                                     <div class="product__image-wrapper">
                                         <img src="img/apple-watch-series-8.png" alt="Apple Watch Series 8" class="product__image" width="200" heigth="200">
@@ -142,22 +145,22 @@
                             </li>
                         </ul>
     
-                        <button class="goods__arrow goods__arrow_prev"></button>
-                        <button class="goods__arrow goods__arrow_next"></button>
                     </div>
+                    <button class="goods__arrow goods__arrow_prev"></button>
+                    <button class="goods__arrow goods__arrow_next"></button>
                 </div>
             </div>
         </section>
 
-        <section class="features" id="feauters">
+        <section class="features" id="features">
             <div class="container">
-                <p class="feauters__tagline">Мы становимся лучше. Для вас</p>
-                <h2 class="feauters__title">Характеристики iPhone 14</h2>
+                <p class="features__tagline">Мы становимся лучше. Для вас</p>
+                <h2 class="features__title">Характеристики iPhone&nbsp;14</h2>
 
-                <div class="feauters__wrapper">
-                    <img src="img/iPhone.png" alt="Iphone" class="feaurers__image">
+                <div class="features__wrapper">
+                    <img src="img/iPhone.png" alt="Iphone" class="features__image">
 
-                    <ul class="feauters__list">
+                    <ul class="features__list">
                         <li class="features__item">
                             <span class="features__item-title">вес</span>
                             <span class="features__item-value">255 г</span>
@@ -184,7 +187,7 @@
         <div class="container">
             <div class="footer__nav navigation">
                 <img src="img/footerLogo.svg" alt="Footer logo" class="footer__logo">
-                <ul class="footer__list">
+                <ul class="footer__list footer__list_column-mobile">
                     <li class="footer__list-item"><a href="#" class="footer__item-link">Продукты</a></li>
                     <li class="footer__list-item"><a href="#" class="footer__item-link">Характеристики</a></li>
                 </ul>

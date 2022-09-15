@@ -21,9 +21,6 @@
     font-size: 16px;
     font-weight: 400;
 }
-.product__price {
-
-}
 .product__more {
     position: relative;
     font-size: 14px;
@@ -41,4 +38,44 @@
     width: 12px;
     height: 8px;
     background: url("../img/arrow-right.svg") no-repeat center;
+}
+
+@media (min-width: 768px) {
+    .product {
+        width: 340px;
+    }
+    .product__image-wrapper {
+        height: 340px;
+        margin-bottom: 20px;
+    }
+    .product__image {
+        height: 235px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product {
+        width: 370px;
+    }
+    .product__image-wrapper {
+        height: 370px;
+        margin-bottom: 24px;
+    }
+    .product__image {
+        height: 255px;
+    }
+
+    .product__info {
+        margin-bottom: 24px;
+        
+    }
+    .product__title {
+        font-size: 24px;
+    }
+    .product__price {
+        font-size: 24px;
+    }
+    .product__more {
+        font-size: 16px;
+    }
 }
