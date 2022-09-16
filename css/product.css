@@ -62,6 +62,7 @@
         margin-bottom: 24px;
     }
     .product__image {
+        width: 255px; 
         height: 255px;
     }
 
