@@ -119,3 +119,50 @@ countryWrapper.addEventListener('click', ({target}) => {
         showPrice(target.dataset.currency);
     }
 });
+
+const declOfNum = (n, titles) => titles[n % 10 === 1 && n % 100 !== 11 ?
+    0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
+
+const timer = (deadline) => {
+    const unitDay = document.querySelector('.timer__unit_day');
+    const unitHours = document.querySelector('.timer__unit_hours');
+    const unitMinutes = document.querySelector('.timer__unit_minutes');
+    const descriptionDay = document.querySelector('.timer__unit-description_day');
+    const descriptionHourse = document.querySelector('.timer__unit-description_hours');
+    const descriptionMinutes = document.querySelector('.timer__unit-description_minutes');
+
+    const getTimeRemaning = () => {
+        const dateStop = new Date(deadline).getTime(); // переводим в миллисекунды 
+        const dateNow = Date.now(); // Текущая дата 
+        const timeRemaning = dateStop - dateNow; // Разница, сколько осталось 
+        const ms = timeRemaning; // Переменная для миллисекунд 
+        const s = timeRemaning / 1000 % 60; // Переводим в секунды  
+        const m = Math.floor(timeRemaning / 1000 / 60 % 60); // Переводим в минуты 
+        const h = Math.floor(timeRemaning / 1000 / 60 / 60 % 24); // Переводим в часы 
+        const d = Math.floor(timeRemaning / 1000 / 60 / 60 / 24 % 365); // Переводим в дни 
+
+        return{timeRemaning, m, h, d};
+    }
+    const start = () => {
+        const timer = getTimeRemaning();
+
+        unitDay.textContent = timer.d;
+        unitHours.textContent = timer.h; 
+        unitMinutes.textContent = timer.m;
+
+        descriptionDay.textContent = declOfNum(timer.d, ['день', 'дня', 'дней'])
+        descriptionHourse.textContent = declOfNum(timer.h, ['час', 'часа', 'часов'])
+        descriptionMinutes.textContent = declOfNum(timer.m, ['минута', 'минуты', 'минут'])
+
+        const timerId = setTimeout(start, 60000);
+
+        if (timer.timeRemaning < 0) {
+            clearTimeout(timerId)
+            unitDay.textContent = '0';
+            unitHours.textContent = '0'; 
+            unitMinutes.textContent = '0';
+        }
+    }
+    start();
+}
+timer('2023/09/07 20:00') // До этой даты ведёт отчёт 
